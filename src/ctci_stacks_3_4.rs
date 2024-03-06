@@ -6,6 +6,8 @@ pub fn run() {
 
     let mut hanoi = Hanoi { tower_0, tower_1, tower_2 };
 
+    println!("{:?} {:?} {:?}", hanoi.tower_0, hanoi.tower_1, hanoi.tower_2);
+
     solve_hanoi(&mut hanoi);
 
     println!("{:?} {:?} {:?}", hanoi.tower_0, hanoi.tower_1, hanoi.tower_2);
