@@ -1,13 +1,13 @@
 pub fn main() {
     // Some text here
-    let mut stack: Vec<Stack_Item>;
+    let mut stack: Stack;
 }
 
 struct Stack {
-    stack: Vec<Stack_Item>
+    stack: Vec<StackItem>
 }
 
-struct Stack_Item {
+struct StackItem {
     number: i32,
-    local_min: i32
+    local_min: *const StackItem
 }
