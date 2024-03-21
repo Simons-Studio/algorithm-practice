@@ -3,25 +3,44 @@ pub fn main() {
     let mut stack: Stack;
 }
 
-struct Stack<'a> {
-    stack: Vec<StackItem<'a>>
+#[derive(Debug)]
+struct Stack {
+    top: Option<StackNode>,
+    lenght: usize
 }
-impl<'a> Stack<'a> {
-    fn pop(&mut self) -> Option<StackItem<'a>> {
-        if self.stack.is_empty() { None }
-        else {
-            let last = self.stack.last();
+impl<'a> Stack {
+    fn pop(&mut self) -> Option<i32> {
+        let Some(top) = self.top.take() else {
+            return None;
+        };
 
-            None
+        let value = top.number;
+
+        if let Some(next_box) = top.next {            
+            self.top = Some(*next_box);
+        } else {
+            self.top = None;
         }
+
+        self.lenght -= 1;
+
+        Some(value)
     }
 
     fn push(&mut self, number: i32) {
-
+        if let Some(top) = self.top.take() {
+            let node = StackNode { number, next: Some(Box::new(top)) };
+            self.top = Some(node);
+        } else {
+            let node = StackNode { number, next: None }; 
+            self.top = Some(node);
+            return;
+        };
     }
 }
 
-struct StackItem<'a> {
+#[derive(Debug)]
+struct StackNode {
     number: i32,
-    local_min: Option<&'a StackItem<'a>>
+    next: Option<Box<StackNode>>,
 }
