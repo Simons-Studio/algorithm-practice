@@ -1,5 +1,6 @@
 mod ctci_stacks_3_2;
 mod ctci_stacks_3_4;
+mod stack;
 
 fn main() {
     let s = "3_2";
