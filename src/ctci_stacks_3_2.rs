@@ -1,5 +1,4 @@
 use core::fmt;
-use std::mem::take;
 
 pub fn run() {
     // Some text here
