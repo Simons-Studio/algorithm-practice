@@ -2,7 +2,7 @@
 // Given a directed graph, design an algorithm to find out weather there is a 
 // root between 2 nodes 
 
-use crate::graph::{self, Graph, Idetifier, Node};
+use crate::utils::graph::{Graph, Idetifier};
 
 pub fn run() {
 
