@@ -20,7 +20,7 @@ pub fn run() {
 }
 
 mod min_stack {
-    use core::{fmt, num};
+    use core::fmt;
 
     #[derive(Debug)]
     pub struct MinStack {
