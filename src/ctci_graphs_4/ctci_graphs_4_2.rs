@@ -9,7 +9,7 @@ pub fn run() {
 
     let mut tree = BinarySearchTreeNode::leaf(0);
     for i in x {
-        tree.insertMax(i);
+        tree.insert_max(i);
     }
     println!("{}", tree.to_string());
 } 
