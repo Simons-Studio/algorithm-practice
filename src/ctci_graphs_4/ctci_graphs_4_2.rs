@@ -1,15 +1,12 @@
 // Given a sorted array (ascending order) with unique integer elements, write an algorithm to 
 // create a binary search tree with minimal height
 
-use crate::utils::trees::BinarySearchTreeNode;
+use crate::utils::trees::BinarySearchTree;
 
 pub fn run() {
-    let x = 10..23;
-    let y = [1, 2, 3, 4, 5, 6, 7, 8];
+    let x = 340..1234;
 
-    let mut tree = BinarySearchTreeNode::leaf(0);
-    for i in x {
-        tree.insert_max(i);
-    }
+    let tree = BinarySearchTree::from_array(x.collect()).unwrap();
+
     println!("{}", tree.to_string());
 } 
